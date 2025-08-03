@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="760.0" prefWidth="1500.0" style="-fx-background-color: #151515;"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.browser.Controller.LogInController">
+    <center>
+        <AnchorPane prefHeight="760.0" prefWidth="539.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fx:id="image" fitHeight="760.0" fitWidth="1199.0" layoutX="278.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/meonda.gif" />
+                    </image>
+                </ImageView>
+                <VBox alignment="CENTER_RIGHT" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="13.0" />
+
+                <VBox alignment="CENTER" layoutX="40.0" layoutY="200.0" spacing="15.0"
+                      style="-fx-background-color: #2b2b2b; -fx-border-color: #444444; -fx-border-width: 2; -fx-padding: 25; -fx-background-radius: 10; -fx-border-radius: 10;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label text="Username" textFill="WHITE">
+                                    <font>
+                                        <Font name="Impact" size="24.0" />
+                                    </font>
+                                    <minWidth>120.0</minWidth> </Label>
+                                <TextField fx:id="username" promptText="Enter your username" prefWidth="250.0"
+                                           style="-fx-control-inner-background: #3a3a3a; -fx-text-fill: #e0e0e0; -fx-prompt-text-fill: #999999; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #555555;" />
+                            </children>
+                        </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label text="Password" textFill="WHITE">
+                                    <font>
+                                        <Font name="Impact" size="24.0" />
+                                    </font>
+                                    <minWidth>120.0</minWidth>
+                                </Label>
+                                <PasswordField fx:id="password" promptText="Enter your password" prefWidth="250.0"
+                                               style="-fx-control-inner-background: #3a3a3a; -fx-text-fill: #e0e0e0; -fx-prompt-text-fill: #999999; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #555555;" />
+                            </children>
+                        </HBox>
+
+                        <Button fx:id="login" onAction="#userLogIn" text="Log In">
+                            <style>
+                                -fx-background-color: #555555; /* Dark gray for button */
+                                -fx-text-fill: #f0f0f0; /* Light text */
+                                -fx-font-size: 18px;
+                                -fx-padding: 10 30;
+                                -fx-background-radius: 5;
+                                -fx-border-radius: 5;
+                                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0.2, 0, 1); /* Subtle shadow */
+                            </style>
+                            <VBox.margin>
+                                <Insets top="15.0" bottom="5.0"/>
+                            </VBox.margin>
+                        </Button>
+
+                        <Label fx:id="wrongLogIn" textFill="#FF4444" style="-fx-font-weight: bold; -fx-font-size: 14px;"/> <Label text="New User?" textFill="#bbbbbb"/> <Button fx:id="signupbutton" onAction="#showSignUpWindow" text="Sign up">
+                        <style>
+                            -fx-background-color: #444444; /* Slightly different dark gray for signup button */
+                            -fx-text-fill: #f0f0f0; /* Light text */
+                            -fx-font-size: 16px;
+                            -fx-padding: 8 25;
+                            -fx-background-radius: 5;
+                            -fx-border-radius: 5;
+                            -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0.2, 0, 1); /* Subtle shadow */
+                        </style>
+                    </Button>
+                    </children>
+                    <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

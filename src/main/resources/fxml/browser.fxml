@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.browser.Controller.BrowserController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Button fx:id="homeIcon" maxHeight="26.0" maxWidth="36.0" minHeight="26.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="26.0" prefWidth="36.0" styleClass="control-button">
+                <graphic>
+                    <ImageView fitHeight="23.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../png/home.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Home" />
+                </tooltip>
+            </Button>
+            <Button fx:id="refresh" maxHeight="26.0" maxWidth="36.0" minHeight="26.0" mnemonicParsing="false" onAction="#refresh" prefHeight="26.0" prefWidth="36.0" styleClass="control-button">
+                <graphic>
+                    <ImageView fitHeight="23.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../png/refresh.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Refresh" />
+                </tooltip>
+            </Button>
+            <Button fx:id="backward" maxHeight="36.0" maxWidth="26.0" minHeight="26.0" mnemonicParsing="false" onAction="#backward" prefHeight="26.0" prefWidth="36.0" styleClass="control-button">
+                <graphic>
+                    <ImageView fitHeight="19.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../png/backward.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Backward" />
+                </tooltip>
+            </Button>
+            <Button fx:id="forward" maxHeight="26.0" maxWidth="36.0" minHeight="26.0" mnemonicParsing="false" onAction="#forward" prefHeight="26.0" prefWidth="36.0" styleClass="control-button">
+                <graphic>
+                    <ImageView fitHeight="23.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../png/forward.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Forward" />
+                </tooltip>
+            </Button>
+            <Button fx:id="google" maxHeight="26.0" maxWidth="36.0" minHeight="26.0" mnemonicParsing="false" onAction="#searchFromGoogle" prefHeight="26.0" prefWidth="27.0" styleClass="control-button">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../img/Google.jpg" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <TextField fx:id="textField" maxHeight="26.0" minHeight="25.0" onAction="#loadPage" prefHeight="26.0" prefWidth="445.0" promptText="Enter URL or search" styleClass="text-field-style" HBox.hgrow="ALWAYS" />
+
+            <Button fx:id="loadbtn" maxHeight="26.0" maxWidth="37.0" minHeight="25.0" minWidth="25.0" onAction="#loadPage" prefHeight="26.0" prefWidth="38.0" styleClass="control-button">
+                <graphic>
+                    <ImageView fitHeight="22.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../png/search2.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Search" />
+                </tooltip></Button>
+            <Button fx:id="bookamrk" maxHeight="26.0" maxWidth="35.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#showBookmarkPopup" prefHeight="26.0" prefWidth="38.0" styleClass="control-button">
+                <graphic>
+                    <ImageView fitHeight="22.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../png/bookamark.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Add to Bookmark" />
+                </tooltip>
+            </Button>
+
+            <MenuButton fx:id="menu" prefHeight="25.0" prefWidth="33.0">
+                <items>
+                    <MenuItem fx:id="history" onAction="#openMenu" text="History" />
+                    <MenuItem fx:id="logoutmenuitem" onAction="#openMenu" text="LogOut" />
+                    <MenuItem fx:id="bookmarkmenuitem" onAction="#openMenu" text="BookMark" />
+
+                </items>
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../png/gear.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </MenuButton>
+        </HBox>
+    </top>
+
+    <center>
+        <WebView fx:id="webView" />
+    </center>
+</BorderPane>

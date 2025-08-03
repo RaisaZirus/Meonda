@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.browser.Controller.SignUpController">
+   <children>
+      <TextField fx:id="username" layoutX="176.0" layoutY="163.0" style="-fx-control-inner-background: #2a2a2a; -fx-text-fill: #ffffff;" />
+      <Label layoutX="44.0" layoutY="163.0" text="UserName" textFill="#f0f0f0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emailid" layoutX="176.0" layoutY="218.0" style="-fx-control-inner-background: #2a2a2a; -fx-text-fill: #ffffff;" />
+      <Label layoutX="44.0" layoutY="218.0" text="Email" textFill="#f0f0f0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="271.0" text="Password" textFill="#f0f0f0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="password" layoutX="177.0" layoutY="271.0" style="-fx-control-inner-background: #2a2a2a; -fx-text-fill: #ffffff;" />
+      <Button fx:id="signup" layoutX="165.0" layoutY="380.0" mnemonicParsing="false" onAction="#SignUp" text="Sign Up" style="-fx-background-color: #333333; -fx-text-fill: #ffffff;" />
+      <Label layoutX="146.0" layoutY="70.0" text="Sign Up" textFill="#f0f0f0">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Label fx:id="Info" layoutX="24.0" layoutY="328.0" textFill="#ff6666">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

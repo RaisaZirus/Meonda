@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" spacing="10.0" style="-fx-padding: 10; -fx-background-color: #161616;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.browser.Controller.BookMarkController">
+
+   <Label prefHeight="50.0" prefWidth="400.0"
+          text="Bookmark"
+          textAlignment="CENTER"
+          style="-fx-font-size: 24px;
+                 -fx-font-weight: bold;
+                 -fx-text-fill: white;
+                 -fx-background-color: linear-gradient(to right, #444, #222);
+                 -fx-padding: 10;
+                 -fx-background-radius: 10;
+                 -fx-alignment: center;"
+   >
+      <effect>
+         <Reflection fraction="0.7" topOpacity="0.3" bottomOpacity="0.0" />
+      </effect>
+   </Label>
+
+   <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
+      <children>
+         <ListView fx:id="bookmarkListView"
+                   layoutX="10.0"
+                   layoutY="10.0"
+                   onMouseClicked="#removeBookmark"
+                   prefHeight="500.0"
+                   prefWidth="600.0"
+                   style="-fx-background-color: #8a8a8a; -fx-border-radius: 5; -fx-background-radius: 5;" />
+      </children>
+   </HBox>
+</VBox>

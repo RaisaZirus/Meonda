@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.browser.Controller.HomeViewController">
+    <top>
+        <HBox alignment="CENTER" prefHeight="49.0" prefWidth="800.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+            <Button fx:id="homeIcon" maxHeight="25.0" minHeight="0.0" minWidth="25.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="25.0" prefWidth="16.0" style="-fx-background-color: #fbfbfb;" textFill="WHITE">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../png/home.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            <tooltip>
+               <Tooltip text="Home" />
+            </tooltip>
+            </Button>
+            <Button fx:id="google" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#searchFromGoogle" prefHeight="25.0" prefWidth="32.0" style="-fx-background-color: #fbfbfb;">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../img/Google.jpg" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            <tooltip>
+               <Tooltip text="Search From Google" />
+            </tooltip>
+            </Button>
+
+            <TextField fx:id="textField" maxHeight="25.0" minHeight="25.0" onAction="#loadPage" prefHeight="25.0" prefWidth="620.0" promptText="Enter URL or search" style="-fx-background-color: #eeeeee;" HBox.hgrow="ALWAYS" />
+            <Button fx:id="loadbtn" maxHeight="26.0" minHeight="25.0" minWidth="25.0" onAction="#loadPage" prefHeight="26.0" prefWidth="38.0" style="-fx-background-color: #fbfbfb;" textFill="WHITE">
+            <graphic>
+               <ImageView fitHeight="22.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../png/search2.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Search(Bing)" />
+            </tooltip></Button>
+            <MenuButton fx:id="menu" maxHeight="25.0" minHeight="25.0" onAction="#openMenu" prefHeight="25.0" prefWidth="32.0" style="-fx-background-color: #fbfbfb;" textFill="WHITE">
+                <items>
+                    <MenuItem fx:id="historyMenuItem" onAction="#openMenu" text="History" />
+                    <MenuItem fx:id="logoutmenuitem" onAction="#openMenu" text="LogOut" />
+                    <MenuItem fx:id="bookmarkmenuitem" onAction="#openMenu" text="BookMark" />
+
+                </items>
+            <graphic>
+               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../png/gear.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            </MenuButton>
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="10.0" style="-fx-background-color: #161616;" BorderPane.alignment="CENTER">
+            <ImageView fx:id="img2" fitHeight="288.0" fitWidth="403.0" preserveRatio="true">
+
+                <image><Image url="@../img/8998adc40112985a8f29cf414925d390.gif" /></image>
+            </ImageView>
+         <Label maxHeight="100.0" maxWidth="500.0" minHeight="100.0" minWidth="500.0" prefHeight="100.0" prefWidth="500.0" text="MEONDA" textAlignment="CENTER" textFill="WHITE">
+            <font>
+               <Font name="Bank Gothic Light BT" size="96.0" />
+            </font>
+            <effect>
+               <Glow level="0.44">
+                  <input>
+                     <Lighting bumpInput="$null">
+                        <light>
+                           <Light.Distant />
+                        </light>
+                     </Lighting>
+                  </input>
+               </Glow>
+            </effect>
+         </Label>
+            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="790.0" spacing="5.0">
+                <ImageView fx:id="img" fitHeight="27.0" fitWidth="37.0" preserveRatio="true">
+                    <image><Image url="@../png/planet-icon-7368.png" /></image>
+                </ImageView>
+                <TextField fx:id="textField2" onAction="#loadPage2" prefHeight="26.0" prefWidth="611.0" promptText="Enter URL or search" style="-fx-background-color: #eeeeee;" />
+                <Button fx:id="loadbtn2" onAction="#loadPage2" prefHeight="36.0" prefWidth="22.0" style="-fx-background-color: #161616;" textAlignment="CENTER" textFill="#323a8f" textOverrun="CLIP">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="992.0" spacing="15.0">
+                <Hyperlink id="yt" fx:id="yt" onAction="#OpenTab" textFill="#f4f4f4">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/yt.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Hyperlink>
+                <Hyperlink id="fb" fx:id="fb" onAction="#OpenTab" textFill="#f2eeee">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/fb.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Hyperlink>
+                <Hyperlink id="moodle" fx:id="moodle" onAction="#OpenTab" textFill="#f7f7f7">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/moodle.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic></Hyperlink>
+                <Hyperlink id="gfg" fx:id="gfg" onAction="#OpenTab" prefHeight="42.0" prefWidth="36.0" textFill="#f2f2f2">
+                <graphic>
+                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../png/twitter.png" />
+                        </image>
+                    </ImageView>
+                </graphic></Hyperlink>
+
+                <Hyperlink id="wiki" fx:id="wiki" onAction="#OpenTab" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/wiki2.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Hyperlink>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
